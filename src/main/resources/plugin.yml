@@ -1,0 +1,43 @@
+name: LamaGames
+description: A Minigame Plugin
+author: Lama06
+version: 1.0.0
+main: io.github.lama06.lamagames.LamaGamesPlugin
+api-version: 1.17
+
+commands:
+  lamagames-start:
+    description: Starts a game in your current world
+  lamagames-stop:
+    description: Stops a game currently running in your world
+  lamagames-list:
+    description: Prints a list of all registered games on the server
+  lamagames-add:
+    description: Lets you create new games on the server
+  lamagames-delete:
+    description: Lets you delete a game from the
+  lamagames-save:
+    description: Saves all unsaved data to the config file
+  blockparty-addFloor:
+    description: Adds a BlockParty floor
+  blockparty-listFloors:
+    description: Prints a list of all floors
+  blockparty-setFloor:
+    description: Lets you set the dance floor
+  blockparty-deleteFloor:
+    description: Lets you delete a floor
+  blockparty-setDeadlyBlock:
+    description: Lets you set the type of block that will kill players
+  blockparty-setSpawn:
+    description: Lets you set the spawn point
+
+permissions:
+  lamagames.admin:
+    default: op
+    description: Allows you to use all admin features of the LamaGames plugin
+    children:
+      lamagames.user: true
+  lamagames.user:
+    default: true
+    description: Allows you to use all features intended for normal users
+  
