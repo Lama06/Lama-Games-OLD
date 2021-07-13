@@ -28,12 +28,12 @@ public abstract class Game implements Listener {
         this.type = type;
     }
 
-    public void load() {
+    public final void load() {
         Bukkit.getPluginManager().registerEvents(this, plugin);
         Bukkit.getPluginManager().callEvent(new GameLoadEvent(this));
     }
 
-    public void unload() {
+    public final void unload() {
         if (running) {
             endGame();
         }
@@ -41,7 +41,7 @@ public abstract class Game implements Listener {
         HandlerList.unregisterAll(this);
     }
 
-    public boolean startGame() {
+    public final boolean startGame() {
         if (running) {
             return false;
         }
@@ -54,23 +54,23 @@ public abstract class Game implements Listener {
 
         running = true;
 
-        broadcast(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.GAME_STARTED_MSG));
-        plugin.getLogger().info(plugin.getTranslator().translate(Message.GAME_STARTED_CONSOLE_MSG) + world.getName());
+        broadcast(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.GAME_STARTED));
+        plugin.getLogger().info(plugin.getTranslator().translate(Message.GAME_STARTED_CONSOLE) + world.getName());
 
         Bukkit.getPluginManager().callEvent(new GameStartEvent(this));
 
         return true;
     }
 
-    public boolean endGame() {
+    public final boolean endGame() {
         if (!running) {
             return false;
         }
 
         running = false;
 
-        broadcast(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.GAME_ENDED_MSG));
-        plugin.getLogger().info(plugin.getTranslator().translate(Message.GAME_ENDED_CONSOLE_MSG) + world.getName());
+        broadcast(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.GAME_ENDED));
+        plugin.getLogger().info(plugin.getTranslator().translate(Message.GAME_ENDED_CONSOLE) + world.getName());
 
         Bukkit.getPluginManager().callEvent(new GameEndEvent(this));
 

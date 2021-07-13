@@ -12,9 +12,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public enum GameType {
-    BLOCK_PARTY(BlockPartyGame::new, BlockPartyConfig.class, BlockPartyConfig::new),
-    //ZOMBIES(ZombiesGame::new, ZombiesConfig.class, ZombiesConfig::new)
-    ;
+    BLOCK_PARTY(BlockPartyGame::new, BlockPartyConfig.class, BlockPartyConfig::new);
 
     private static final Map<String, GameType> byName = new HashMap<>();
 

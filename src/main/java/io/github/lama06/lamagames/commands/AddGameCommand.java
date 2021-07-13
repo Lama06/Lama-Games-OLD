@@ -20,13 +20,18 @@ public class AddGameCommand extends LamaCommand {
         }
 
         if (args.length != 1) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.ERROR_WRONG_COMMAND_USAGE));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.ERROR_COMMAND_WRONG_USAGE));
+            return;
+        }
+
+        if (plugin.getGameManager().getGameByWorld(player.getWorld()) != null) {
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.COMMAND_LAMAGAMES_ADD_GAME_WORLD_ALREADY_HAS_A_GAME));
             return;
         }
 
         GameType type = GameType.getByName(args[0]);
         if (type == null) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.ERROR_GAME_TYPE_NOT_FOUND));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.COMMAND_LAMAGAMES_ADD_GAME_GAME_TYPE_NOT_FOUND));
             return;
         }
 

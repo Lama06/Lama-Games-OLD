@@ -24,12 +24,12 @@ public class AddFloorCommand extends LamaCommand {
 
         Game game = plugin.getGameManager().getGameByWorld(player.getWorld());
         if (!(game instanceof BlockPartyGame blockParty)) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_GAME_NOT_FOUND));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_NOT_IN_GAME_WORLD));
             return;
         }
 
         if (args.length != 7) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_WRONG_COMMAND_USAGE));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_WRONG_USAGE));
             return;
         }
 
@@ -46,7 +46,7 @@ public class AddFloorCommand extends LamaCommand {
             pos1 = BlockPosition.parse(args[1], args[2], args[3]);
             pos2 = BlockPosition.parse(args[4], args[5], args[6]);
         } catch (NumberFormatException e) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_WRONG_COMMAND_USAGE));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_WRONG_USAGE));
             return;
         }
 

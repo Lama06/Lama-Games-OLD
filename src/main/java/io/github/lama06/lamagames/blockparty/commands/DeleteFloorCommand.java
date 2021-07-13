@@ -25,12 +25,12 @@ public class DeleteFloorCommand extends LamaCommand {
 
         Game game = plugin.getGameManager().getGameByWorld(player.getWorld());
         if (!(game instanceof BlockPartyGame blockParty)) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_GAME_NOT_FOUND));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_NOT_IN_GAME_WORLD));
             return;
         }
 
         if (args.length != 1) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_WRONG_COMMAND_USAGE));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_WRONG_USAGE));
             return;
         }
         String name = args[0];

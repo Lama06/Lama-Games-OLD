@@ -25,22 +25,18 @@ public class SetDeadlyBlockCommand extends LamaCommand {
 
         Game game = plugin.getGameManager().getGameByWorld(player.getWorld());
         if (!(game instanceof BlockPartyGame blockParty)) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_GAME_NOT_FOUND));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_NOT_IN_GAME_WORLD));
             return;
         }
 
         if (args.length != 1) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_WRONG_COMMAND_USAGE));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_WRONG_USAGE));
             return;
         }
 
         Material material = Registry.MATERIAL.get(NamespacedKey.minecraft(args[0]));
-        if (material == null) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_MATERIAL_NOT_FOUND));
-            return;
-        }
-        if (!material.isBlock() || material.isAir()) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_MATERIAL_NOT_A_BLOCK));
+        if (material == null || !material.isBlock() || material.isAir()) {
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.COMMAND_BLOCK_PARTY_SET_DEADLY_BLOCK_MATERIAL_NOT_FOUND));
             return;
         }
 

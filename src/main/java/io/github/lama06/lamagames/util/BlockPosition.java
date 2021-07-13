@@ -8,14 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BlockPosition implements ConfigurationSerializable {
-    public static final BlockPosition NULL = new BlockPosition(0, 0, 0);
-
     public int x;
     public int y;
     public int z;
-
-    public BlockPosition() {
-    }
 
     public BlockPosition(int x, int y, int z) {
         this.x = x;
@@ -34,10 +29,6 @@ public class BlockPosition implements ConfigurationSerializable {
         z = (int) data.get("z");
     }
 
-    public static BlockPosition parse(String arg1, String arg2, String arg3) {
-        return new BlockPosition(Integer.parseInt(arg1), Integer.parseInt(arg2), Integer.parseInt(arg3));
-    }
-
     @Override
     public Map<String, Object> serialize() {
         Map<String, Object> data = new HashMap<>();
@@ -54,5 +45,9 @@ public class BlockPosition implements ConfigurationSerializable {
     @Override
     public String toString() {
         return x + " " + y + " " + z;
+    }
+
+    public static BlockPosition parse(String arg1, String arg2, String arg3) {
+        return new BlockPosition(Integer.parseInt(arg1), Integer.parseInt(arg2), Integer.parseInt(arg3));
     }
 }

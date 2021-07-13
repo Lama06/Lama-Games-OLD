@@ -23,7 +23,7 @@ public class SetSpawnPointCommand extends LamaCommand {
 
         Game game = plugin.getGameManager().getGameByWorld(player.getWorld());
         if (!(game instanceof BlockPartyGame blockParty)) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_GAME_NOT_FOUND));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_NOT_IN_GAME_WORLD));
             return;
         }
 

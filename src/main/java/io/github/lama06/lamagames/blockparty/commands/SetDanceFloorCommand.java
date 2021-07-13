@@ -24,18 +24,18 @@ public class SetDanceFloorCommand extends LamaCommand {
 
         Game game = plugin.getGameManager().getGameByWorld(player.getWorld());
         if (!(game instanceof BlockPartyGame blockParty)) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_GAME_NOT_FOUND));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_NOT_IN_GAME_WORLD));
             return;
         }
 
         if (args.length != 1) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_WRONG_COMMAND_USAGE));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_WRONG_USAGE));
             return;
         }
 
         Block targeted = player.getTargetBlockExact(5);
         if (targeted == null) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_NO_TARGETED_BLOCK));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.COMMAND_BLOCK_PARTY_SET_DANCE_FLOOR_NO_TARGETED_BLOCK));
             return;
         }
 
@@ -48,7 +48,7 @@ public class SetDanceFloorCommand extends LamaCommand {
             blockParty.getConfig().danceFloorPosition2 = position;
             sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.COMMAND_BLOCK_PARTY_SET_DANCE_FLOOR_SUCCESS));
         } else {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_WRONG_COMMAND_USAGE));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_WRONG_USAGE));
         }
     }
 }

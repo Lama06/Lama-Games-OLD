@@ -13,6 +13,11 @@ public class ListGamesCommand extends LamaCommand {
 
     @Override
     public void execute(CommandSender sender, String label, String[] args) {
+        if (plugin.getGameManager().getGames().size() == 0) {
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.COMMAND_LAMAGAMES_LIST_NO_GAMES));
+            return;
+        }
+
         sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.COMMAND_LAMAGAMES_LIST_HEADER));
 
         for (Game game : plugin.getGameManager().getGames()) {

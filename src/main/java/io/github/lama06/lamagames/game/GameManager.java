@@ -30,13 +30,13 @@ public class GameManager {
 
             World world = Bukkit.getWorld(worldName);
             if (world == null) {
-                deleteGame(worldName); // Die zu diesem Spiel gehörende Welt exestiert nicht mehr
+                gamesConfiguration.set(worldName, null);
                 continue;
             }
 
             GameType type = GameType.getByName(worldConfig.getString("type"));
             if (type == null) {
-                deleteGame(worldName);
+                gamesConfiguration.set(worldName, null);
                 continue;
             }
 
@@ -69,17 +69,10 @@ public class GameManager {
         game.load();
     }
 
-    public void deleteGame(String worldName) {
-        World world = Bukkit.getWorld(worldName);
-        if (world != null) {
-            Game game = getGameByWorld(world);
-            if (game != null) {
-                games.remove(game);
-                game.unload();
-            }
-        }
-
-        getGamesConfiguration().set(worldName, null);
+    public void deleteGame(Game game) {
+        game.unload();
+        getGamesConfiguration().set(game.getWorld().getName(), null);
+        games.remove(game);
     }
 
     public Game getGameByWorld(World world) {

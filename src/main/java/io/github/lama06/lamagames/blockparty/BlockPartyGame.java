@@ -213,6 +213,7 @@ public class BlockPartyGame extends Game {
 
     private List<DyeColor> getColors(Floor floor) {
         List<DyeColor> colors = new ArrayList<>();
+
         for (BlockPosition position : Util.getBlocksInArea(floor.position1, floor.position2)) {
             Block block = world.getBlockAt(position.x, position.y, position.z);
 
@@ -223,6 +224,7 @@ public class BlockPartyGame extends Game {
                 }
             }
         }
+
         return colors;
     }
 
@@ -245,11 +247,13 @@ public class BlockPartyGame extends Game {
 
     private boolean isEveryoneDead(Player ignore) {
         boolean result = true;
+
         for (Player player : world.getPlayers()) {
             if (isAlive(player) && !player.equals(ignore)) {
                 result = false;
             }
         }
+
         return result;
     }
 
