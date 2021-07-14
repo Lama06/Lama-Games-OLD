@@ -10,13 +10,13 @@ public class GameEndEvent extends GameEvent {
         super(game);
     }
 
-    @SuppressWarnings("unused")
-    public static HandlerList getHandlerList() {
+    @Override
+    public HandlerList getHandlers() {
         return handlers;
     }
 
-    @Override
-    public HandlerList getHandlers() {
+    @SuppressWarnings("unused")
+    public static HandlerList getHandlerList() {
         return handlers;
     }
 }

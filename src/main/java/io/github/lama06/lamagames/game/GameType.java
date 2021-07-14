@@ -22,6 +22,10 @@ public enum GameType {
         }
     }
 
+    public static GameType getByName(String name) {
+        return byName.get(name.toLowerCase(Locale.ROOT));
+    }
+
     private final GameCreator gameCreator;
     private final Class<? extends ConfigurationSerializable> configType;
     private final Supplier<ConfigurationSerializable> configCreator;
@@ -30,10 +34,6 @@ public enum GameType {
         this.gameCreator = gameCreator;
         this.configType = configType;
         this.configCreator = configCreator;
-    }
-
-    public static GameType getByName(String name) {
-        return byName.get(name.toLowerCase(Locale.ROOT));
     }
 
     public String getName() {

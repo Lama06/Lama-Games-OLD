@@ -11,11 +11,6 @@ public class GameCanStartEvent extends GameEvent {
         super(game);
     }
 
-    @SuppressWarnings("unused")
-    public static HandlerList getHandlerList() {
-        return handlers;
-    }
-
     public boolean getCanStart() {
         return canStart;
     }
@@ -26,6 +21,11 @@ public class GameCanStartEvent extends GameEvent {
 
     @Override
     public HandlerList getHandlers() {
+        return handlers;
+    }
+
+    @SuppressWarnings("unused")
+    public static HandlerList getHandlerList() {
         return handlers;
     }
 }

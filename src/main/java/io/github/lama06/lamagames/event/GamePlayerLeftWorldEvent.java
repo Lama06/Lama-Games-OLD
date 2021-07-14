@@ -13,17 +13,17 @@ public class GamePlayerLeftWorldEvent extends GameEvent {
         this.player = player;
     }
 
-    @SuppressWarnings("unused")
-    public static HandlerList getHandlerList() {
-        return handlers;
-    }
-
     public Player getPlayer() {
         return player;
     }
 
     @Override
     public HandlerList getHandlers() {
+        return handlers;
+    }
+
+    @SuppressWarnings("unused")
+    public static HandlerList getHandlerList() {
         return handlers;
     }
 }
