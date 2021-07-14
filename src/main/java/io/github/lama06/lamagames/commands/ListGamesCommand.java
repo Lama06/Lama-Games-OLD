@@ -21,7 +21,7 @@ public class ListGamesCommand extends LamaCommand {
         sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.COMMAND_LAMAGAMES_LIST_HEADER));
 
         for (Game game : plugin.getGameManager().getGames()) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN) + String.format("%s -> %s", game.getWorld().getName(), game.getType().toString()));
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN) + String.format("%s -> %s", game.getWorld().getName(), game.getType().getName()));
         }
     }
 }

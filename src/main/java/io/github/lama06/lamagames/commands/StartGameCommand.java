@@ -21,6 +21,7 @@ public class StartGameCommand extends LamaCommand {
 
         Game game = plugin.getGameManager().getGameByWorld(player.getWorld());
         if (game == null) {
+            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_MAIN, Message.ERROR_COMMAND_NOT_IN_GAME_WORLD));
             return;
         }
 
