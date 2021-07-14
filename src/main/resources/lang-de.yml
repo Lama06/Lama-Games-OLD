@@ -1,41 +1,46 @@
-prefix_main: "&7[&eLama&bGames&7]&r "
-prefix_block_party: "&3[&dBlock&cParty&3]&r "
+prefix_main: "&7[&cLama&9Games&7]&r "
+prefix_block_party: "&7[&bBlock&eParty&7]&r "
 
-error_permission: "&cDu hast nicht die erfoderliche Berechtigung um diese Aktion durchzuführen"
-error_wrong_command_usage: "&cFalsche Verwendung des Commands"
-error_console_not_allowed: "&cDieser Command kann nicht in der Server Konsole ausgeführt werden"
-error_game_not_found: "&cEs wurde kein entsprechendes Spiel gefunden"
-error_material_not_found: "&cEs wurde entsprechendes Material gefunden"
-error_material_not_a_block: "&cDas angegebene Material ist kein Block"
-error_no_targeted_block: "&cDu fokusierst keinen Block"
-error_game_type_not_found: "&cEs wurde kein Spiel mit diesem Namen gefunden"
+error_command_permission_required: "&cDu hast nicht die benötigte Berechtigung um diesen Command zu benutzen"
+error_command_wrong_usage: "&cFalsche Verwendung des Commands"
+error_command_console_not_allowed: "Dieser Command kann nicht in der Server Konsole ausgeführt werden"
+error_command_not_in_game_world: "&cDu befindest dich nicht in einer Welt, die ein Spiel enthält"
 
-command_lamagames_list_header: "Es gibt folgende Spiele auf dem Server:"
+command_lamagames_list_header: "Es gibt folgende &bSpiele&r auf dem Server:"
+command_lamagames_list_no_games: "Es gibt &ckeine&r Spiele auf dem Server"
 
-command_lamagames_start_success: "Das Spiel wurde &2erfolgreich&r gestartet"
+command_lamagames_start_success: "Das Spiel wurde &aerfolgreich&r gestartet"
 command_lamagames_start_fail: "&cDas Spiel konnte nicht gestartet werden"
 
-command_lamagames_stop_success: "Das Spiel wurde &eerfolgreich&r beendet"
+command_lamagames_stop_success: "Das Spiel wurde &aerfolgreich&r beendet"
 command_lamagames_stop_fail: "&cDas Spiel konnte nicht beendet werden"
 
-command_lamagames_add_game_success: "Das Spiel wurde &aerfolgreich&r hinzugefügt"
+command_lamagames_add_game_success: "Es wurde &aerfolgreich&r ein neues Spiel erstellt"
+command_lamagames_add_game_world_already_has_a_game: "&cIn dieser Welt existiert bereits ein Spiel"
+command_lamagames_add_game_game_type_not_found: "&cEs wurde kein Spiel mit diesem Namen gefunden"
 
-command_lamagames_delete_game_success: "Das Spiel wurde &aerfolgreich&r entfernt"
+command_lamagames_delete_game_success: "Das Spiel wurde &aerfolgreich&r gelöscht"
 
-command_block_party_set_dance_floor_success: "Die Position der &dTanzfläche&r wurde &aerfolgreich&r geändert"
+command_lamagames_save_config_success: "Die Konfiguration des Plugins wurde &aerfolgreich&r gespeichert"
 
-command_block_party_add_floor_success: "Es wurde &aerfolgreich&r eine Variante des Bodens der &dTanzfläche&r hinzugefügt"
+command_block_party_set_dance_floor_success: "Die Position der &dTanzfläche&r wurde &aerolgreich&r geändert"
+command_block_party_set_dance_floor_no_targeted_block: "&cDu musst einen Block fokussieren um die Position der &dTanzfläche&r&c anzupassen"
 
-command_block_party_set_deadly_block_success: "Es wurde &aerfolgreich&r ein tödlicher neuer Block festgelegt"
+command_block_party_add_floor_success: "Es wurde &aerfolgreich&r ein neuer Boden hinzugefügt"
+command_block_party_add_floor_name_taken: "&cEs gibt schon einen Boden mit diesem Namen"
 
-command_block_party_set_spawn_success: "Der &bSpawnpunkt&r wurde &aerfolgreich&r geändert"
+command_block_party_set_deadly_block_success: "Der tödliche Block wurde &aerfolgreich&r angepasst"
+command_block_party_set_deadly_block_material_not_found: "&cEs gibt keinen Block mit diesem Namen"
 
-command_block_party_list_floors_header: "Es gibt aktuell folgende Böden für die &dTanzfläche&r:"
+command_block_party_set_spawn_success: "Der Spawnpunkt wurde &aerfolgreich&r angepasst"
 
-command_block_party_delete_floor_success: "Der Boden für die &dTanzfläche&r wurde &aerfolgreich&r entfernt"
+command_block_party_list_floors_header: "Es gibt folgende Varianten der &dTanzfläche&r:"
+command_block_party_list_floors_no_floors: "&cEs gibt keine Varianten der &dTanzfläche"
+
+command_block_party_delete_floor_success: "Der Böden mit diesem Namen wurde &aerfolgreich&r entfernt"
 command_block_party_delete_floor_not_found: "&cEs wurde kein Boden mit diesem Namen gefunden"
 
-game_started_msg: "&aDas Spiel beginnt!"
-game_ended_msg: "&6Das Spiel ist nun beendet"
-game_started_console_msg: "In der folgenden Welt wurde ein Spiel gestartet: "
-game_ended_console_msg: "In der folgenden Welt wurde ein Spiel beendet: "
+game_started: "&a&lDas Spiel beginnt!"
+game_ended: "&3&lDas Spiel ist nun beendet!"
+game_started_console: "In der folgenden Welt wurde ein Spiel gestartet: "
+game_ended_console: "In der folgenden Welt wurde ein Spiel beendet: "

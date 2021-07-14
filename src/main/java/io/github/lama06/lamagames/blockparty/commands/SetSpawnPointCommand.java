@@ -17,7 +17,7 @@ public class SetSpawnPointCommand extends LamaCommand {
     @Override
     public void execute(CommandSender sender, String label, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage(plugin.getTranslator().translate(Message.PREFIX_BLOCK_PARTY, Message.ERROR_COMMAND_CONSOLE_NOT_ALLOWED));
+            sender.sendMessage(plugin.getTranslator().translate(Message.ERROR_COMMAND_CONSOLE_NOT_ALLOWED));
             return;
         }
 
